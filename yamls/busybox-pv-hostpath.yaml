@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox
+  labels:
+    name: busybox-pvc-hostpath
+spec:
+  volumes:
+  - name: host-volume
+    persistentVolumeClaim: 
+      claimName: pvc-hostpath
+  containers:
+  - name: busybox
+    image: busybox
+    command: ["/bin/sh"]
+    args: ["-c", "sleep 600"]
+    volumeMounts:
+    - name: host-volume
+      mountPath: /mydata

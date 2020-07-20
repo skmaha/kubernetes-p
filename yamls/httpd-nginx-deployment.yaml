@@ -1,0 +1,41 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx-deploy-app-container
+        image: nginx
+        ports:
+          - containerPort: 80
+            protocol: TCP
+      - name: httpd-deploy-app-container
+        image: httpd:latest
+        ports:
+          - containerPort: 80
+            protocol: TCP
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginxdeployment-svc
+  labels:
+    name: nginx
+spec: 
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30125
+  type: NodePort
+  selector:
+    app: nginx
