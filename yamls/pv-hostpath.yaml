@@ -6,7 +6,7 @@ metadata:
     type: local
 spec:
   storageClassName: manual
-#  persistentVolumeReclaimPolicy: Delete ## Define Reclaim policy as delete, when you delete pvc automatically pv will be deleted if the directory on node created at /tmp/ path. ex: /tmp/kube
+#  persistentVolumeReclaimPolicy: Delete ## Define Reclaim policy as delete, when you delete pvc automatically pv will be deleted if the directory on node created at /tmp/ path. ex: /tmp/kube.
   capacity:
     storage: 1Gi
   accessModes:

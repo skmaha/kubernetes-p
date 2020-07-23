@@ -1,3 +1,4 @@
+#PVC Will be same for hostpath volume type and nfs volume type. there will be no change on requesting the persistent volume. only change is in creating and declaring the persistent volume by cluster administrator
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -8,4 +9,4 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: 400Mi
+      storage: 200Mi
