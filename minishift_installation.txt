@@ -1,0 +1,214 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\WINDOWS\system32> choco install minishift
+Chocolatey v0.10.15
+2 validations performed. 1 success(es), 1 warning(s), and 0 error(s).
+
+Validation Warnings:
+ - A pending system reboot request has been detected, however, this is
+   being ignored due to the current Chocolatey configuration.  If you
+   want to halt when this occurs, then either set the global feature
+   using:
+     choco feature enable -name=exitOnRebootDetected
+   or pass the option --exit-when-reboot-detected.
+
+Installing the following packages:
+minishift
+By installing you accept licenses for the packages.
+Progress: Downloading minishift 1.34.2... 100%
+
+minishift v1.34.2 [Approved]
+minishift package files install completed. Performing other installation steps.
+The package minishift wants to run 'chocolateyInstall.ps1'.
+Note: If you don't run this script, the installation will fail.
+Note: To confirm automatically next time, use '-y' or consider:
+choco feature enable -n allowGlobalConfirmation
+Do you want to run the script?([Y]es/[A]ll - yes to all/[N]o/[P]rint): A
+
+Extracting 64-bit C:\ProgramData\chocolatey\lib\minishift\tools\minishift-1.34.2-windows-amd64.zip to C:\ProgramData\chocolatey\lib\minishift\tools...
+C:\ProgramData\chocolatey\lib\minishift\tools
+ ShimGen has successfully created a shim for minishift.exe
+ The install of minishift was successful.
+  Software installed to 'C:\ProgramData\chocolatey\lib\minishift\tools'
+
+Chocolatey installed 1/1 packages.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+PS C:\WINDOWS\system32> minishift start
+-- Starting profile 'minishift'
+-- Check if deprecated options are used ... OK
+-- Checking if https://github.com is reachable ... OK
+-- Checking if requested OpenShift version 'v3.11.0' is valid ... OK
+-- Checking if requested OpenShift version 'v3.11.0' is supported ... OK
+-- Checking if requested hypervisor 'hyperv' is supported on this platform ... OK
+-- Checking if Powershell is available ... OK
+-- Checking if Hyper-V driver is installed ... FAIL
+   See the 'Setting Up the Virtualization Environment' topic (https://docs.okd.io/latest/minishift/getting-started/setting-up-virtualization-environment.html) for more information
+PS C:\WINDOWS\system32> choco install minishift --version=1.5.0
+Chocolatey v0.10.15
+2 validations performed. 1 success(es), 1 warning(s), and 0 error(s).
+
+Validation Warnings:
+ - A pending system reboot request has been detected, however, this is
+   being ignored due to the current Chocolatey configuration.  If you
+   want to halt when this occurs, then either set the global feature
+   using:
+     choco feature enable -name=exitOnRebootDetected
+   or pass the option --exit-when-reboot-detected.
+
+Installing the following packages:
+minishift
+By installing you accept licenses for the packages.
+A newer version of minishift (v1.34.2) is already installed.
+ Use --allow-downgrade or --force to attempt to install older versions, or use side by side to allow multiple versions.
+
+Chocolatey installed 0/1 packages. 1 packages failed.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+
+Failures
+ - minishift - A newer version of minishift (v1.34.2) is already installed.
+ Use --allow-downgrade or --force to attempt to install older versions, or use side by side to allow multiple versions.
+PS C:\WINDOWS\system32>
+PS C:\WINDOWS\system32>
+PS C:\WINDOWS\system32>
+PS C:\WINDOWS\system32>
+PS C:\WINDOWS\system32> minishift config set vm-driver virtualbox
+No Minishift instance exists. New 'vm-driver' setting will be applied on next 'minishift start'
+PS C:\WINDOWS\system32>
+PS C:\WINDOWS\system32>
+PS C:\WINDOWS\system32>
+PS C:\WINDOWS\system32> minishift start --vm-driver virtualbox
+-- Starting profile 'minishift'
+-- Check if deprecated options are used ... OK
+-- Checking if https://github.com is reachable ... OK
+-- Checking if requested OpenShift version 'v3.11.0' is valid ... OK
+-- Checking if requested OpenShift version 'v3.11.0' is supported ... OK
+-- Checking if requested hypervisor 'virtualbox' is supported on this platform ... OK
+-- Checking if VirtualBox is installed ... OK
+-- Checking the ISO URL ... OK
+-- Downloading OpenShift binary 'oc' version 'v3.11.0'
+ 53.59 MiB / 53.59 MiB [===========================================================================================================================================================] 100.00% 0s-- Downloading OpenShift v3.11.0 checksums ... OK
+-- Checking if provided oc flags are supported ... OK
+-- Starting the OpenShift cluster using 'virtualbox' hypervisor ...
+-- Minishift VM will be configured with ...
+   Memory:    4 GB
+   vCPUs :    2
+   Disk size: 20 GB
+
+   Downloading ISO 'https://github.com/minishift/minishift-centos-iso/releases/download/v1.16.0/minishift-centos7.iso'
+ 370.00 MiB / 370.00 MiB [=========================================================================================================================================================] 100.00% 0s
+-- Starting Minishift VM ......................................... OK
+-- Checking for IP address ... OK
+-- Checking for nameservers ... OK
+-- Checking if external host is reachable from the Minishift VM ...
+   Pinging 8.8.8.8 ... OK
+-- Checking HTTP connectivity from the VM ...
+   Retrieving http://minishift.io/index.html ... OK
+-- Checking if persistent storage volume is mounted ... OK
+-- Checking available disk space ... 1% used OK
+-- Writing current configuration for static assignment of IP address ... OK
+   Importing 'openshift/origin-control-plane:v3.11.0' . CACHE MISS
+   Importing 'openshift/origin-docker-registry:v3.11.0' . CACHE MISS
+   Importing 'openshift/origin-haproxy-router:v3.11.0' . CACHE MISS
+-- OpenShift cluster will be configured with ...
+   Version: v3.11.0
+-- Pulling the OpenShift Container Image ............... OK
+-- Copying oc binary from the OpenShift container image to VM ... OK
+-- Starting OpenShift cluster ..............................................................
+Getting a Docker client ...
+Checking if image openshift/origin-control-plane:v3.11.0 is available ...
+Pulling image openshift/origin-cli:v3.11.0
+E0731 13:13:26.114018    3010 helper.go:173] Reading docker config from /home/docker/.docker/config.json failed: open /home/docker/.docker/config.json: no such file or directory, will attempt to pull image docker.io/openshift/origin-cli:v3.11.0 anonymously
+Image pull complete
+E0731 13:13:28.183526    3010 helper.go:173] Reading docker config from /home/docker/.docker/config.json failed: open /home/docker/.docker/config.json: no such file or directory, will attempt to pull image docker.io/openshift/origin-node:v3.11.0 anonymously
+Pulling image openshift/origin-node:v3.11.0
+Pulled 5/6 layers, 93% complete
+Pulled 6/6 layers, 100% complete
+Extracting
+Image pull complete
+Checking type of volume mount ...
+Determining server IP ...
+Using public hostname IP 192.168.99.102 as the host IP
+Checking if OpenShift is already running ...
+Checking for supported Docker version (=>1.22) ...
+Checking if insecured registry is configured properly in Docker ...
+Checking if required ports are available ...
+Checking if OpenShift client is configured properly ...
+Checking if image openshift/origin-control-plane:v3.11.0 is available ...
+I0731 13:13:45.163475    3010 config.go:40] Running "create-master-config"
+Starting OpenShift using openshift/origin-control-plane:v3.11.0 ...
+I0731 13:13:47.586861    3010 config.go:46] Running "create-node-config"
+I0731 13:13:48.497583    3010 flags.go:30] Running "create-kubelet-flags"
+I0731 13:13:48.932524    3010 run_kubelet.go:49] Running "start-kubelet"
+I0731 13:13:49.177447    3010 run_self_hosted.go:181] Waiting for the kube-apiserver to be ready ...
+I0731 13:14:27.194575    3010 interface.go:26] Installing "kube-proxy" ...
+I0731 13:14:27.195312    3010 interface.go:26] Installing "kube-dns" ...
+I0731 13:14:27.195325    3010 interface.go:26] Installing "openshift-service-cert-signer-operator" ...
+I0731 13:14:27.195331    3010 interface.go:26] Installing "openshift-apiserver" ...
+I0731 13:14:27.195389    3010 apply_template.go:81] Installing "openshift-apiserver"
+I0731 13:14:27.195417    3010 apply_template.go:81] Installing "kube-dns"
+I0731 13:14:27.195632    3010 apply_template.go:81] Installing "kube-proxy"
+I0731 13:14:27.196574    3010 apply_template.go:81] Installing "openshift-service-cert-signer-operator"
+I0731 13:14:33.547747    3010 interface.go:41] Finished installing "kube-proxy" "kube-dns" "openshift-service-cert-signer-operator" "openshift-apiserver"
+I0731 13:17:07.581552    3010 run_self_hosted.go:242] openshift-apiserver available
+I0731 13:17:07.582491    3010 interface.go:26] Installing "openshift-controller-manager" ...
+I0731 13:17:07.582513    3010 apply_template.go:81] Installing "openshift-controller-manager"
+I0731 13:17:12.412470    3010 interface.go:41] Finished installing "openshift-controller-manager"
+Adding default OAuthClient redirect URIs ...
+Adding web-console ...
+Adding centos-imagestreams ...
+Adding registry ...
+Adding router ...
+Adding sample-templates ...
+Adding persistent-volumes ...
+I0731 13:17:12.437100    3010 interface.go:26] Installing "openshift-web-console-operator" ...
+I0731 13:17:12.437110    3010 interface.go:26] Installing "centos-imagestreams" ...
+I0731 13:17:12.437121    3010 interface.go:26] Installing "openshift-image-registry" ...
+I0731 13:17:12.437127    3010 interface.go:26] Installing "openshift-router" ...
+I0731 13:17:12.437133    3010 interface.go:26] Installing "sample-templates" ...
+I0731 13:17:12.437139    3010 interface.go:26] Installing "persistent-volumes" ...
+I0731 13:17:12.438013    3010 apply_template.go:81] Installing "openshift-web-console-operator"
+I0731 13:17:12.438188    3010 apply_list.go:67] Installing "centos-imagestreams"
+I0731 13:17:12.439329    3010 interface.go:26] Installing "sample-templates/mongodb" ...
+I0731 13:17:12.439342    3010 interface.go:26] Installing "sample-templates/dancer quickstart" ...
+I0731 13:17:12.439349    3010 interface.go:26] Installing "sample-templates/jenkins pipeline ephemeral" ...
+I0731 13:17:12.439356    3010 interface.go:26] Installing "sample-templates/sample pipeline" ...
+I0731 13:17:12.439362    3010 interface.go:26] Installing "sample-templates/mariadb" ...
+I0731 13:17:12.439368    3010 interface.go:26] Installing "sample-templates/mysql" ...
+I0731 13:17:12.439374    3010 interface.go:26] Installing "sample-templates/postgresql" ...
+I0731 13:17:12.439381    3010 interface.go:26] Installing "sample-templates/cakephp quickstart" ...
+I0731 13:17:12.439388    3010 interface.go:26] Installing "sample-templates/django quickstart" ...
+I0731 13:17:12.439395    3010 interface.go:26] Installing "sample-templates/nodejs quickstart" ...
+I0731 13:17:12.439401    3010 interface.go:26] Installing "sample-templates/rails quickstart" ...
+I0731 13:17:12.439461    3010 apply_list.go:67] Installing "sample-templates/rails quickstart"
+I0731 13:17:12.439642    3010 apply_list.go:67] Installing "sample-templates/mongodb"
+I0731 13:17:12.439757    3010 apply_list.go:67] Installing "sample-templates/dancer quickstart"
+I0731 13:17:12.439858    3010 apply_list.go:67] Installing "sample-templates/jenkins pipeline ephemeral"
+I0731 13:17:12.439956    3010 apply_list.go:67] Installing "sample-templates/sample pipeline"
+I0731 13:17:12.440105    3010 apply_list.go:67] Installing "sample-templates/mariadb"
+I0731 13:17:12.440216    3010 apply_list.go:67] Installing "sample-templates/mysql"
+I0731 13:17:12.440375    3010 apply_list.go:67] Installing "sample-templates/postgresql"
+I0731 13:17:12.440472    3010 apply_list.go:67] Installing "sample-templates/cakephp quickstart"
+I0731 13:17:12.440587    3010 apply_list.go:67] Installing "sample-templates/django quickstart"
+I0731 13:17:12.440695    3010 apply_list.go:67] Installing "sample-templates/nodejs quickstart"
+I0731 13:17:32.609716    3010 interface.go:41] Finished installing "sample-templates/mongodb" "sample-templates/dancer quickstart" "sample-templates/jenkins pipeline ephemeral" "sample-templates/sample pipeline" "sample-templates/mariadb" "sample-templates/mysql" "sample-templates/postgresql" "sample-templates/cakephp quickstart" "sample-templates/django quickstart" "sample-templates/nodejs quickstart" "sample-templates/rails quickstart"
+I0731 13:18:08.509373    3010 interface.go:41] Finished installing "openshift-web-console-operator" "centos-imagestreams" "openshift-image-registry" "openshift-router" "sample-templates" "persistent-volumes"
+Login to server ...
+Creating initial project "myproject" ...
+Server Information ...
+OpenShift server started.
+
+The server is accessible via web console at:
+    https://192.168.99.102:8443/console
+
+You are logged in as:
+    User:     developer
+    Password: <any value>
+
+To login as administrator:
+    oc login -u system:admin
+
+
+-- Exporting of OpenShift images is occuring in background process with pid 24848.
