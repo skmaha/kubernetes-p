@@ -30,6 +30,5 @@ kubectl get all -n kube-system
 
 kubectl get all -n default
 
-kubectl get all -n <name-of-the-namespace>
+kubectl get all -n (name-of-the-namespace)
 
-<next>
