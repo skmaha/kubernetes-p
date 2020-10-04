@@ -1,8 +1,0 @@
-# Creating namespace wtih name "prod"
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: prod 
-  labels: 
-    name: prod
-
