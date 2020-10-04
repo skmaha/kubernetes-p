@@ -27,7 +27,9 @@ kubectl create -f test-mutipod-deployment.yaml
 # Display all modules of a Namespace
 
 kubectl get all -n kube-system
+
 kubectl get all -n default
+
 kubectl get all -n <name-of-the-namespace>
 
 <next>
