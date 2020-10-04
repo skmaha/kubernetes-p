@@ -32,3 +32,12 @@ kubectl get all -n default
 
 kubectl get all -n (name-of-the-namespace)
 
+# List all name spaces
+
+kubectl get sa --all-namespaces
+
+@ Edit a resource in kubernetes
+
+kubectl edit pod kubernetes-dashboard-7b544877d5-f5xrv -n kubernetes-dashboard
+
+kubectl edit svc kubernetes-dashboard -n kubernetes-dashboard
