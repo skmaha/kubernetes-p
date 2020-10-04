@@ -36,8 +36,10 @@ kubectl get all -n (name-of-the-namespace)
 
 kubectl get sa --all-namespaces
 
-@ Edit a resource in kubernetes
+# Edit a resource in kubernetes
 
 kubectl edit pod kubernetes-dashboard-7b544877d5-f5xrv -n kubernetes-dashboard
 
 kubectl edit svc kubernetes-dashboard -n kubernetes-dashboard
+
+SYNTAX: kubectl edit pod or svc or deployment (name of the pod/svc/deploy) -n (name-of-the-namespace)
